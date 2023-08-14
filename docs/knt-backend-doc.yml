@@ -237,6 +237,8 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         '407':
           $ref: "#/components/responses/ForbidenError"
+        '422':
+          $ref: "#/components/responses/UnprocessableError"
   /users/{userId}:
     get:
       tags:
@@ -260,8 +262,12 @@ paths:
                 $ref: "#/components/schemas/user"
         '401':
           $ref: "#/components/responses/UnauthorizedError"
+        '404':
+          $ref: "#/components/responses/NotFoundError"
         '407':
           $ref: "#/components/responses/ForbidenError"
+        '422':
+          $ref: "#/components/responses/UnprocessableError"
   /admin/users/{userId}:
     get:
       tags:
@@ -286,8 +292,12 @@ paths:
                   
         '401':
           $ref: "#/components/responses/UnauthorizedError"
+        '404':
+          $ref: "#/components/responses/NotFoundError"
         '407':
           $ref: "#/components/responses/ForbidenError"
+        '422':
+          $ref: "#/components/responses/UnprocessableError"
   /admin/users/balance:
     post:
       tags:
@@ -683,5 +693,9 @@ components:
   responses:
     UnauthorizedError:
       description: API key is missing or invalid
+    NotFoundError:
+      description: Resource does not exist
     ForbidenError:
       description: Api key does not have the necessary permissions to carry out this request
+    UnprocessableError:
+      description: Malformed user input

@@ -28,12 +28,12 @@ func MakeTransaction(userId int, purchase PurchaseRequest) (int, error) {
 
 	//pin validation
 	if !ValidatePin(purchase.Password, user) {
-		return 0, errors.New("Unauthorized")
+		return 0, errors.New("incorrect pin")
 	}
 	//calculate cost
 	cost, err := calculateCost(purchase.Data)
 	if err != nil {
-		return 0, err
+		return 0, errors.New("could not find all products")
 	}
 	//validate users balance
 	if cost*-1 > user.Balance {
@@ -132,11 +132,6 @@ func setBalance(transaction *sql.Tx, userId int, balance int) error {
 func addTaxTotals(entries []PurchaseEntry, transaction *sql.Tx, cost int) error {
 	year := time.Now().Year()
 
-	//Ensure yearly tables existance
-	err := ensureTaxTableExists(transaction, year)
-	if err != nil {
-		return err
-	}
 	//Go through all the entries and apply the operation on all of them
 	for _, entry := range entries {
 		//check if entry exists
@@ -163,11 +158,6 @@ func addTaxTotals(entries []PurchaseEntry, transaction *sql.Tx, cost int) error 
 	}
 
 	return nil
-}
-
-func ensureTaxTableExists(transaction *sql.Tx, year int) error {
-	_, err := addToTransaction(transaction, "CREATE TABLE IF NOT EXISTS tax (id INTEGER PRIMARY KEY AUTOINCREMENT, product_id INT, amount INT, totalCost INT, year INT)")
-	return err
 }
 
 func UpdateUserBalance(user User, balance int, body string, ref string) error {

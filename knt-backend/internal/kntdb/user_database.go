@@ -13,13 +13,17 @@ func GetAllMinimalUsers() ([]MinimalUser, error) {
 }
 
 func GetMinimalUser(userId int) (MinimalUser, error) {
-	return getFirstEntry[MinimalUser]("select id, first_name, last_name, balance from user where id = ? and visibility = 1", userId)
+	user, err := getFirstEntry[MinimalUser]("select id, first_name, last_name, balance from user where id = ? and visibility = 1", userId)
+	if user.Id == 0 && err == nil {
+		err = errors.New("User not found")
+	}
+	return user, err
 }
 
 func GetUser(userID int) (User, error) {
 	user, err := getFirstEntry[User]("select * from user where id = ?", userID)
-	if user.Id == 0 {
-		return user, errors.New("User not found")
+	if user.Id == 0 && err == nil {
+		err = errors.New("User not found")
 	}
 	return user, err
 }
@@ -68,8 +72,8 @@ func ModifyUser(new User, old User) User {
 	return old
 }
 
-func GetPopulatedTransactions(pp int, p int) ([]TransactionDetails, error) {
-	basicTrans, err := getBasicTransactions(pp, p)
+func GetPopulatedTransactions(perPage int, page int) ([]TransactionDetails, error) {
+	basicTrans, err := getBasicTransactions(perPage, page)
 	if err != nil {
 		return nil, err
 	}

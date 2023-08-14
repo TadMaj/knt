@@ -32,13 +32,13 @@ type MinimalUser struct {
 }
 
 type PurchaseRequest struct {
-	Password string          `json:"password"`
-	Data     []PurchaseEntry `json:"data"`
+	Password string          `json:"password" validate:"required,lte=8,gte=4"`
+	Data     []PurchaseEntry `json:"data" validate:"required,dive"`
 }
 
 type PurchaseEntry struct {
-	ProductId int `json:"productId"`
-	Amount    int `json:"amount"`
+	ProductId int `json:"productId" validate:"required"`
+	Amount    int `json:"amount" validate:"required,lte=40000,gte=1"`
 }
 
 type Transaction struct {

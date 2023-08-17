@@ -10,6 +10,8 @@ import (
 	"github.com/google/logger"
 )
 
+var validate = validator.New()
+
 func ping(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
@@ -36,7 +38,6 @@ func generateJsonFromStruct[K any](data K) string {
 func makeAndValidateStruct[K any](reader io.ReadCloser) (K, error) {
 	var data K
 	json.NewDecoder(reader).Decode(&data)
-	validate := validator.New()
 	err := validate.Struct(data)
 	return data, err
 }

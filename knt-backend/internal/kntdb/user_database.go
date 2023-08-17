@@ -29,7 +29,11 @@ func GetUser(userID int) (User, error) {
 }
 
 func GetUserByVunetId(VunetId string) (User, error) {
-	return getFirstEntry[User]("select * from user where vunetid = ?", VunetId)
+	user, err := getFirstEntry[User]("select * from user where vunetid = ?", VunetId)
+	if user.Id == 0 && err == nil {
+		err = errors.New("User not found")
+	}
+	return user, err
 }
 
 func CreateNewUser(user User) (int64, error) {
@@ -38,67 +42,35 @@ func CreateNewUser(user User) (int64, error) {
 		user.FirstName, user.LastName, user.VunetId, user.Password, user.Visibility)
 }
 
-func UpdateUser(userNew User) (int64, error) {
-	if userNew.Id == 0 {
+func UpdateUser(user User) (int64, error) {
+	if user.Id == 0 {
 		return 0, errors.New("invalid user")
 	}
 
-	userOld, err := GetUser(userNew.Id)
+	oldUser, err := GetUser(user.Id)
 	if err != nil {
-		return 0, err
+		return 0, errors.New("invalid user")
 	}
-	finalUser := ModifyUser(userNew, userOld)
 
+	if user.Password != "" {
+		user.Password = ShaHashing(user.Password)
+	} else {
+		user.Password = oldUser.Password
+	}
 	return commitTransaction(
 		"update user set first_name = ?, last_name = ?, vunetid = ?, password = ?, visibility = ? where id = ?",
-		finalUser.FirstName, finalUser.LastName, finalUser.VunetId, finalUser.Password, finalUser.Visibility, finalUser.Id)
-}
-
-// Returns a user object made from the old user and changes in the request
-func ModifyUser(new User, old User) User {
-	if new.FirstName != "" {
-		old.FirstName = new.FirstName
-	}
-	if new.LastName != "" {
-		old.LastName = new.LastName
-	}
-	if new.VunetId != "" {
-		old.VunetId = new.VunetId
-	}
-	old.Visibility = new.Visibility
-	if new.Password != "" {
-		old.Password = ShaHashing(new.Password)
-	}
-	return old
+		user.FirstName, user.LastName, user.VunetId, user.Password, user.Visibility, user.Id)
 }
 
 func GetPopulatedTransactions(perPage int, page int) ([]TransactionDetails, error) {
-	basicTrans, err := getBasicTransactions(perPage, page)
-	if err != nil {
-		return nil, err
-	}
-
-	var result []TransactionDetails
-	for _, t := range basicTrans {
-		u, err := GetUser(t.UserId)
-		if err != nil {
-			return nil, err
-		}
-		r, err := getReceipt(t.ReceiptId)
-		if err != nil {
-			return nil, err
-		}
-
-		result = append(result, TransactionDetails{
-			Id:              t.Id,
-			VunetId:         u.VunetId,
-			StartingBalance: t.StartingBalance,
-			DeltaBalance:    t.DeltaBalance,
-			FinalBalance:    t.FinalBalance,
-			Reference:       t.Reference,
-			Timestamp:       r.Timestamp,
-			Data:            r.Data,
-		})
-	}
-	return result, nil
+	return genericQuery[TransactionDetails](
+		"select T.id, U.vunetid, T.starting_balance, T.delta_balance,"+
+			"T.final_balance, T.reference, R.timestamp, R.data"+
+			"from transactions as T"+
+			"left join user as U"+
+			"on U.id = T.user_id"+
+			"left join receipts as R"+
+			"on T.receipt_id = R.id"+
+			"order by T.id desc limit ? offset ?",
+		perPage, page*perPage)
 }

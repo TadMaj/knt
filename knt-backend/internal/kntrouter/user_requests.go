@@ -34,8 +34,9 @@ func createNewUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//TODO: Client side hashing
-	body.Password = kntdb.ShaHashing(body.Password)
+	if body.Password != "" {
+		body.Password = kntdb.ShaHashing(body.Password)
+	}
 
 	id, err := kntdb.CreateNewUser(body)
 	if err != nil {
@@ -143,13 +144,28 @@ func updateUserBalance(w http.ResponseWriter, r *http.Request) {
 }
 
 func getTransactions(w http.ResponseWriter, r *http.Request) {
-	format, err := makeAndValidateStruct[Pagination](r.Body)
+	perPage := r.URL.Query().Get("perPage")
+	page := r.URL.Query().Get("page")
+
+	if perPage == "" {
+		perPage = "10"
+	}
+	if page == "" {
+		page = "0"
+	}
+
+	itemCount, err := strconv.Atoi(perPage)
+	if err != nil {
+		checkAndSendError(w, err, http.StatusUnprocessableEntity)
+		return
+	}
+	pageNum, err := strconv.Atoi(page)
 	if err != nil {
 		checkAndSendError(w, err, http.StatusUnprocessableEntity)
 		return
 	}
 
-	data, err := kntdb.GetPopulatedTransactions(format.PerPage, format.Page)
+	data, err := kntdb.GetPopulatedTransactions(itemCount, pageNum)
 	if err != nil {
 		checkAndSendError(w, err, http.StatusUnprocessableEntity)
 		return

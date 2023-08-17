@@ -1,0 +1,284 @@
+INFO : 2023/08/11 17:48:56 Attempting to start listening on port: 5000
+INFO : 2023/08/11 17:49:50 Access: /ping GET
+INFO : 2023/08/11 17:49:55 Access: /ping GET
+INFO : 2023/08/11 17:49:56 Access: /ping GET
+INFO : 2023/08/11 17:49:58 Access: /ping GET
+INFO : 2023/08/11 17:52:26 Access: /users GET
+ERROR: 2023/08/11 17:52:26 API key missing
+INFO : 2023/08/11 17:52:31 Access: /users GET
+ERROR: 2023/08/11 17:52:31 API key missing
+INFO : 2023/08/11 17:55:12 Access: /ping GET
+INFO : 2023/08/11 17:55:14 Access: /users GET
+ERROR: 2023/08/11 17:55:14 Unauthorized
+INFO : 2023/08/11 17:57:33 Access: /ping GET
+INFO : 2023/08/11 17:57:36 Access: /users GET
+INFO : 2023/08/11 18:01:33 Access: /users/products GET
+INFO : 2023/08/11 18:04:08 Access: /users/1 GET
+INFO : 2023/08/11 18:05:05 Access: /users/98765456789 GET
+INFO : 2023/08/11 18:05:09 Access: /users/98765456789 GET
+INFO : 2023/08/11 18:14:44 Attempting to start listening on port: 5000
+INFO : 2023/08/11 18:14:57 Access: /users/98765456789 GET
+ERROR: 2023/08/11 18:14:57 Unable to get user: User not found id: 98765456789
+INFO : 2023/08/11 18:15:02 Access: /users/9 GET
+ERROR: 2023/08/11 18:15:02 Unable to get user: User not found id: 9
+INFO : 2023/08/11 18:15:06 Access: /users/2 GET
+INFO : 2023/08/11 18:15:10 Access: /users/3 GET
+INFO : 2023/08/11 18:15:17 Access: /users/4 GET
+INFO : 2023/08/11 18:15:21 Access: /users/1 GET
+INFO : 2023/08/11 18:25:49 Attempting to start listening on port: 5000
+INFO : 2023/08/11 18:26:46 Access: /users/1 GET
+INFO : 2023/08/11 18:26:51 Access: /users/5 GET
+ERROR: 2023/08/11 18:26:51 Unable to get user: User not found id: 5
+INFO : 2023/08/11 18:30:20 Attempting to start listening on port: 5000
+INFO : 2023/08/11 18:30:45 Access: /users/4 GET
+INFO : 2023/08/11 18:31:14 Access: /users/7 GET
+ERROR: 2023/08/11 18:31:14 Unable to get user: User not found id: 7
+INFO : 2023/08/11 19:05:02 Access: /users/1/purchase POST
+INFO : 2023/08/11 19:05:13 Access: /users/2/purchase POST
+ERROR: 2023/08/11 19:05:13 Unable to make transaction: Unauthorized
+INFO : 2023/08/11 19:08:20 Access: /users/2/purchase POST
+ERROR: 2023/08/11 19:08:20 Unable to make transaction: Unauthorized
+INFO : 2023/08/11 19:08:24 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:08:26 Access: /users/2/purchase POST
+ERROR: 2023/08/11 19:08:26 Unable to make transaction: incorrect pin
+INFO : 2023/08/11 19:08:50 Access: /users/1/purchase POST
+INFO : 2023/08/11 19:17:10 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:17:15 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:17:15 Unable to make transaction: could not find all products
+INFO : 2023/08/11 19:17:28 Access: /users/1/purchase POST
+INFO : 2023/08/11 19:18:05 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:18:05 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:21:51 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:22:00 Access: /users/1/purchase POST
+INFO : 2023/08/11 19:22:00 Access: /users/1/purchase POST
+INFO : 2023/08/11 19:22:57 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:23:03 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:23:03 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:23:57 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:24:01 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:24:01 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:25:36 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:25:42 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:25:42 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:26:07 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:26:07 Unable to decode body: Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'gte' tag
+INFO : 2023/08/11 19:26:52 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:26:52 Unable to decode body: Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'lte' tag
+INFO : 2023/08/11 19:27:03 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:27:03 Unable to make transaction: incorrect pin
+INFO : 2023/08/11 19:27:09 Access: /users/1/purchase POST
+INFO : 2023/08/11 19:27:20 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:27:20 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:27:22 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:27:22 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:27:22 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:27:22 Unable to make transaction: insufficient balance on user
+INFO : 2023/08/11 19:29:44 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:29:44 Unable to make transaction: could not find all products
+INFO : 2023/08/11 19:30:02 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:30:02 Unable to decode body: Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'required' tag
+Key: 'PurchaseRequest.Data' Error:Field validation for 'Data' failed on the 'required' tag
+INFO : 2023/08/11 19:30:10 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:30:10 Unable to decode body: Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'required' tag
+Key: 'PurchaseRequest.Data' Error:Field validation for 'Data' failed on the 'required' tag
+INFO : 2023/08/11 19:30:26 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:30:26 Unable to decode body: Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'required' tag
+Key: 'PurchaseRequest.Data' Error:Field validation for 'Data' failed on the 'required' tag
+INFO : 2023/08/11 19:30:36 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:30:36 Unable to decode body: Key: 'PurchaseRequest.Data' Error:Field validation for 'Data' failed on the 'required' tag
+INFO : 2023/08/11 19:30:56 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:30:56 Unable to make transaction: could not find all products
+INFO : 2023/08/11 19:32:59 Attempting to start listening on port: 5000
+INFO : 2023/08/11 19:33:06 Access: /users/1/purchase POST
+ERROR: 2023/08/11 19:33:06 Unable to decode body: Key: 'PurchaseRequest.Data[0].ProductId' Error:Field validation for 'ProductId' failed on the 'required' tag
+Key: 'PurchaseRequest.Data[0].Amount' Error:Field validation for 'Amount' failed on the 'lte' tag
+INFO : 2023/08/14 12:17:04 Attempting to start listening on port: 5000
+INFO : 2023/08/14 12:17:34 Access: /users GET
+ERROR: 2023/08/14 12:17:34 API key missing
+INFO : 2023/08/14 12:18:30 Access: /users GET
+INFO : 2023/08/14 12:18:44 Access: /users GET
+INFO : 2023/08/14 12:18:58 Access: /users/0 GET
+ERROR: 2023/08/14 12:18:58 User not found
+INFO : 2023/08/14 12:19:01 Access: /users/0 GET
+ERROR: 2023/08/14 12:19:01 User not found
+INFO : 2023/08/14 12:19:04 Access: /users/2 GET
+INFO : 2023/08/14 12:19:08 Access: /users/4 GET
+INFO : 2023/08/14 12:19:12 Access: /users/5 GET
+ERROR: 2023/08/14 12:19:12 User not found
+INFO : 2023/08/14 12:19:16 Access: /users/6 GET
+ERROR: 2023/08/14 12:19:16 User not found
+INFO : 2023/08/14 12:39:10 Attempting to start listening on port: 5000
+INFO : 2023/08/14 12:39:21 Access: /users GET
+INFO : 2023/08/14 12:39:23 Access: /users GET
+INFO : 2023/08/14 13:33:10 Attempting to start listening on port: 5000
+INFO : 2023/08/14 13:33:16 Access: /users GET
+INFO : 2023/08/14 13:33:22 Access: /users GET
+INFO : 2023/08/14 13:34:47 Access: /users/1/purchase POST
+INFO : 2023/08/14 13:34:55 Access: /users/1/purchase POST
+ERROR: 2023/08/14 13:34:55 Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'gte' tag
+INFO : 2023/08/14 13:35:09 Access: /users/1/purchase POST
+INFO : 2023/08/14 13:35:17 Access: /users/1/purchase POST
+ERROR: 2023/08/14 13:35:17 could not find all products
+INFO : 2023/08/14 13:35:25 Access: /users/1/purchase POST
+ERROR: 2023/08/14 13:35:25 Key: 'PurchaseRequest.Data[0].Amount' Error:Field validation for 'Amount' failed on the 'lte' tag
+INFO : 2023/08/14 13:35:40 Access: /users GET
+INFO : 2023/08/14 13:35:42 Access: /users GET
+INFO : 2023/08/14 13:35:51 Access: /users/4/purchase POST
+ERROR: 2023/08/14 13:35:51 Key: 'PurchaseRequest.Data[0].Amount' Error:Field validation for 'Amount' failed on the 'lte' tag
+INFO : 2023/08/14 13:35:56 Access: /users/4/purchase POST
+ERROR: 2023/08/14 13:35:56 insufficient balance on user
+INFO : 2023/08/14 13:36:26 Access: /users/12 GET
+ERROR: 2023/08/14 13:36:26 User not found
+INFO : 2023/08/14 13:36:30 Access: /users/4 GET
+INFO : 2023/08/14 13:36:44 Access: /users/products GET
+INFO : 2023/08/14 13:38:29 Access: /users/products GET
+INFO : 2023/08/14 13:38:50 Access: /admin/products GET
+INFO : 2023/08/14 13:40:16 Access: /users/products GET
+INFO : 2023/08/14 13:41:22 Access: /admin/products PUT
+ERROR: 2023/08/14 13:41:22 no admin key provided
+INFO : 2023/08/14 13:41:47 Access: /admin/products PUT
+INFO : 2023/08/14 13:42:12 Access: /admin/products GET
+INFO : 2023/08/14 13:42:27 Access: /users GET
+INFO : 2023/08/14 13:42:34 Access: /users/products GET
+INFO : 2023/08/14 13:56:43 Access: /admin/products PUT
+INFO : 2023/08/14 13:56:49 Attempting to start listening on port: 5000
+INFO : 2023/08/14 13:56:59 Access: /admin/products PUT
+INFO : 2023/08/14 13:58:26 Access: /admin/products GET
+INFO : 2023/08/14 13:58:33 Access: /admin/products PUT
+INFO : 2023/08/14 14:00:27 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:00:29 Access: /admin/products PUT
+INFO : 2023/08/14 14:01:17 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:01:20 Access: /admin/products GET
+INFO : 2023/08/14 14:01:24 Access: /admin/products PUT
+INFO : 2023/08/14 14:04:01 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:04:04 Access: /admin/products PUT
+INFO : 2023/08/14 14:04:04 Access: /admin/products PUT
+INFO : 2023/08/14 14:04:25 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:04:26 Access: /admin/products PUT
+INFO : 2023/08/14 14:05:48 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:05:51 Access: /admin/products PUT
+INFO : 2023/08/14 14:06:32 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:06:35 Access: /admin/products PUT
+INFO : 2023/08/14 14:08:07 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:08:10 Access: /admin/products PUT
+INFO : 2023/08/14 14:10:18 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:10:22 Access: /admin/products PUT
+INFO : 2023/08/14 14:10:29 Access: /admin/products PUT
+INFO : 2023/08/14 14:10:31 Access: /admin/products PUT
+INFO : 2023/08/14 14:11:04 Access: /users/4/purchase POST
+ERROR: 2023/08/14 14:11:04 Key: 'PurchaseRequest.Password' Error:Field validation for 'Password' failed on the 'gte' tag
+INFO : 2023/08/14 14:12:02 Access: /admin/products PUT
+INFO : 2023/08/14 14:12:10 Access: /admin/products PUT
+INFO : 2023/08/14 14:12:17 Attempting to start listening on port: 5000
+INFO : 2023/08/14 14:12:20 Access: /admin/products PUT
+ERROR: 2023/08/14 14:12:20 Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:49:09 Attempting to start listening on port: 5000
+INFO : 2023/08/14 15:49:12 Access: /admin/products GET
+INFO : 2023/08/14 15:49:34 Access: /admin/products PUT
+ERROR: 2023/08/14 15:49:34 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'required' tag
+INFO : 2023/08/14 15:49:50 Access: /admin/products PUT
+ERROR: 2023/08/14 15:49:50 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'required' tag
+INFO : 2023/08/14 15:49:58 Access: /admin/products PUT
+INFO : 2023/08/14 15:50:09 Access: /admin/products PUT
+ERROR: 2023/08/14 15:50:09 Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:50:39 Attempting to start listening on port: 5000
+INFO : 2023/08/14 15:50:42 Access: /admin/products PUT
+ERROR: 2023/08/14 15:50:42 Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:51:01 Access: /admin/products PUT
+ERROR: 2023/08/14 15:51:01 Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:51:05 Attempting to start listening on port: 5000
+INFO : 2023/08/14 15:51:07 Access: /admin/products PUT
+ERROR: 2023/08/14 15:51:07 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'boolean' tag
+Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:51:22 Access: /admin/products PUT
+ERROR: 2023/08/14 15:51:22 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'boolean' tag
+Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:51:27 Access: /admin/products PUT
+ERROR: 2023/08/14 15:51:27 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'required' tag
+Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 15:54:25 Attempting to start listening on port: 5000
+INFO : 2023/08/14 15:54:33 Access: /admin/products PUT
+ERROR: 2023/08/14 15:54:33 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'required' tag
+INFO : 2023/08/14 15:56:06 Access: /admin/products PUT
+ERROR: 2023/08/14 15:56:06 Key: 'Product.Visibility' Error:Field validation for 'Visibility' failed on the 'required' tag
+INFO : 2023/08/14 15:56:10 Attempting to start listening on port: 5000
+INFO : 2023/08/14 15:56:12 Access: /admin/products PUT
+INFO : 2023/08/14 15:56:19 Access: /admin/products PUT
+INFO : 2023/08/14 15:56:30 Access: /admin/products GET
+INFO : 2023/08/14 16:02:03 Access: /admin/products PUT
+ERROR: 2023/08/14 16:02:03 Key: 'Product.Id' Error:Field validation for 'Id' failed on the 'required' tag
+INFO : 2023/08/14 16:02:10 Attempting to start listening on port: 5000
+INFO : 2023/08/14 16:02:14 Access: /admin/products PUT
+INFO : 2023/08/14 16:02:28 Access: /admin/products GET
+INFO : 2023/08/14 16:03:52 Attempting to start listening on port: 5000
+INFO : 2023/08/14 16:03:57 Access: /admin/products PUT
+INFO : 2023/08/14 16:04:44 Attempting to start listening on port: 5000
+INFO : 2023/08/14 16:04:47 Access: /admin/products PUT
+ERROR: 2023/08/14 16:04:47 invalid user
+INFO : 2023/08/14 16:07:00 Access: /admin/products GET
+INFO : 2023/08/14 16:09:05 Access: /admin/products POST
+INFO : 2023/08/14 16:09:14 Access: /admin/products POST
+ERROR: 2023/08/14 16:09:14 Key: 'Product.Name' Error:Field validation for 'Name' failed on the 'required' tag
+INFO : 2023/08/14 16:09:31 Access: /admin/products POST
+ERROR: 2023/08/14 16:09:31 Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 16:09:35 Access: /admin/products POST
+INFO : 2023/08/14 16:09:38 Access: /admin/products GET
+INFO : 2023/08/14 16:10:17 Access: /admin/products POST
+ERROR: 2023/08/14 16:10:17 Key: 'Product.TaxCategory' Error:Field validation for 'TaxCategory' failed on the 'required' tag
+INFO : 2023/08/14 16:11:08 Access: /admin/products/098 GET
+ERROR: 2023/08/14 16:11:08 Product not found
+INFO : 2023/08/14 16:11:12 Access: /admin/products/08 GET
+INFO : 2023/08/14 16:11:19 Access: /admin/products/34567 GET
+ERROR: 2023/08/14 16:11:19 Product not found
+INFO : 2023/08/14 16:11:23 Access: /admin/products/-1 GET
+ERROR: 2023/08/14 16:11:23 Product not found
+INFO : 2023/08/14 16:11:29 Access: /admin/products/4 GET
+INFO : 2023/08/14 16:11:40 Access: /admin/products/-08 GET
+ERROR: 2023/08/14 16:11:40 Product not found
+INFO : 2023/08/14 16:16:38 Attempting to start listening on port: 5000
+FATAL: 2023/08/14 16:16:38 listen tcp :5000: bind: address already in use
+INFO : 2023/08/14 16:17:00 Attempting to start listening on port: 5500
+INFO : 2023/08/14 16:56:09 Attempting to start listening on port: 5000
+INFO : 2023/08/14 17:00:47 Access: /admin/users/6 GET
+ERROR: 2023/08/14 17:00:47 User not found
+INFO : 2023/08/14 17:00:51 Access: /admin/users/3 GET
+INFO : 2023/08/14 17:00:54 Access: /admin/users/6 GET
+ERROR: 2023/08/14 17:00:54 User not found
+INFO : 2023/08/14 17:16:40 Attempting to start listening on port: 5000
+INFO : 2023/08/14 17:16:46 Access: /admin/users/balance POST
+INFO : 2023/08/14 17:16:55 Access: /admin/users/balance POST
+INFO : 2023/08/14 17:17:13 Access: /admin/users GET
+INFO : 2023/08/14 17:20:51 Attempting to start listening on port: 5000
+INFO : 2023/08/14 17:22:31 Access: /admin/users/balance POST
+ERROR: 2023/08/14 17:22:31 Key: 'WebhookFormat.VunetId' Error:Field validation for 'VunetId' failed on the 'required' tag
+INFO : 2023/08/14 17:22:40 Access: /admin/users/balance POST
+ERROR: 2023/08/14 17:22:40 Key: 'WebhookFormat.Balance' Error:Field validation for 'Balance' failed on the 'required' tag
+INFO : 2023/08/14 17:22:50 Access: /admin/users GET
+INFO : 2023/08/14 17:27:37 Access: /admin/users PUT
+INFO : 2023/08/14 17:29:16 Access: /admin/users GET
+INFO : 2023/08/14 17:29:35 Access: /users/2/purchase POST
+ERROR: 2023/08/14 17:29:35 incorrect pin
+INFO : 2023/08/14 17:29:44 Access: /users/2/purchase POST
+ERROR: 2023/08/14 17:29:44 incorrect pin
+INFO : 2023/08/14 17:31:12 Attempting to start listening on port: 5000
+INFO : 2023/08/14 17:31:15 Access: /admin/users PUT
+INFO : 2023/08/14 17:31:24 Access: /users/2/purchase POST
+INFO : 2023/08/14 17:35:13 Attempting to start listening on port: 5000
+INFO : 2023/08/14 17:36:07 Access: /admin/users PUT
+ERROR: 2023/08/14 17:36:07 Key: 'User.Visibility' Error:Field validation for 'Visibility' failed on the 'max' tag
+INFO : 2023/08/14 17:36:18 Access: /admin/users PUT
+INFO : 2023/08/14 17:36:22 Access: /admin/users PUT
+INFO : 2023/08/14 17:36:25 Access: /admin/users GET
+INFO : 2023/08/14 20:03:42 Access: /admin/users POST
+INFO : 2023/08/14 20:03:50 Access: /admin/users GET
+INFO : 2023/08/14 20:05:26 Access: /admin/users POST
+INFO : 2023/08/14 20:05:39 Access: /admin/users GET
+INFO : 2023/08/14 20:07:36 Attempting to start listening on port: 5000
+INFO : 2023/08/14 20:07:46 Access: /admin/users POST
+INFO : 2023/08/14 20:07:51 Access: /admin/users GET
+INFO : 2023/08/14 20:08:27 Access: /users/7/purchase POST
+ERROR: 2023/08/14 20:08:27 User has no password, cannot complete the transaction
+INFO : 2023/08/14 20:11:19 Attempting to start listening on port: 5000
+INFO : 2023/08/14 20:13:17 Access: /admin/users GET
+ERROR: 2023/08/14 20:13:17 API key missing
+INFO : 2023/08/14 20:14:10 Access: /admin/users GET

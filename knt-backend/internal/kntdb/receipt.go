@@ -188,11 +188,3 @@ func UpdateUserBalance(user User, balance int, body string, ref string) error {
 
 	return nil
 }
-
-func getBasicTransactions(pp int, p int) ([]Transaction, error) {
-	return genericQuery[Transaction]("select * from transactions order by id desc limit ? offset ?", pp, p*pp)
-}
-
-func getReceipt(id int) (Receipt, error) {
-	return getFirstEntry[Receipt]("select * from receipts where id = ?", id)
-}

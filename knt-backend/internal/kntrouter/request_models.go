@@ -1,7 +1,7 @@
 package kntrouter
 
 type ErrorModel struct {
-	Err string `json:"Error"`
+	Err string `json:"error"`
 }
 
 type IdResponse struct {
@@ -13,12 +13,7 @@ type SpentFormat struct {
 }
 
 type WebhookFormat struct {
-	Balance   int    `json:"balance"`
-	VunetId   string `json:"vunetid"`
+	Balance   int    `json:"balance" validate:"required"`
+	VunetId   string `json:"vunetid" validate:"required"`
 	Reference string `json:"reference"`
-}
-
-type Pagination struct {
-	Page    int `json:"page" validator:"required"`
-	PerPage int `json:"perPage" validator:"required"`
 }
